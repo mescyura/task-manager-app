@@ -21,3 +21,6 @@ yarn-error.log
 /.vscode/
 *.sublime-*
 *.swp
+
+.DS_Store
+.DS_Store?
