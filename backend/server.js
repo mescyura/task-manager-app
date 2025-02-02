@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import fs from 'node:fs';
 
 import connect from './src/db/connect.js';
+import errorHandler from './src/helpers/errorHandler.js';
 
 dotenv.config();
 
@@ -22,6 +23,9 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// error handle middleware
+app.use(errorHandler);
 
 // routes
 const routeFiles = fs.readdirSync('./src/routes');
