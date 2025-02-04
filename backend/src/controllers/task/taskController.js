@@ -66,7 +66,7 @@ export const getTask = asyncHandler(async (req, res) => {
 			res.status(404).json({ message: 'Task not found!' });
 		}
 
-		if (!task.user.l(userId)) {
+		if (!task.user.equals(userId)) {
 			res.status(401).json({ message: 'Not authorized!' });
 		}
 
